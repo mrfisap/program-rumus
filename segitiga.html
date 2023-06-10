@@ -1,0 +1,55 @@
+<html>
+<head>
+    <title>Menghitung Luas Segitiga</title>
+    <style>
+        #alas, #tinggi{
+            width: 30%;
+        }
+    </style>
+</head>
+<body>
+    <h3>Program Menghitung Luas Segitiga</h3>
+    <img src="luas.png" alt="segitiga" width="200px">
+    <table>
+        <tr>
+            <td>Alas</td>
+            <td>:</td>
+            <td>
+                <input type="number" name="alas" id="alas" min="1"> cm
+            </td>
+        </tr>
+        <tr>
+            <td>Tinggi</td>
+            <td>:</td>
+            <td>
+                <input type="number" name="tinggi" id="tinggi" min="1"> cm
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td>
+                <button class="hitung" onClick="hitung()">Hitung</button>
+            </td>
+        </tr>
+    </table>
+    <hr>
+    <h4>Luas Segitiga : <span id="luas"></span> </h4>
+</body>
+<script>
+    function hitung() {
+        var alas = document.getElementById("alas").value;
+        var tinggi = document.getElementById("tinggi").value;
+        if (alas == '' && alas == 0) {
+            document.getElementById("luas").innerHTML = '';
+            alert("Alas tidak boleh kosong atau pun 0");
+        }else if (tinggi == '' && tinggi == 0) {
+            document.getElementById("luas").innerHTML = '';
+            alert("Tinggi tidak boleh kosong atau pun 0");
+        }else{
+            var luas = alas * tinggi / 2;
+            document.getElementById("luas").innerHTML = luas + ' cm';
+        }
+    }
+</script>
+</html>

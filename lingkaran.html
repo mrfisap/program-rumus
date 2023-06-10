@@ -1,0 +1,45 @@
+<html>
+<head>
+    <title>Menghitung Keliling Lingkaran</title>
+    <style>
+        #jarijari{
+            width: 30%;
+        }
+    </style>
+</head>
+<body>
+    <h3>Program Menghitung Keliling Lingkaran</h3>
+    <img src="lingkaran.png" alt="lingkaran" width="200px">
+    <table>
+        <tr>
+            <td>Jari Jari (r)</td>
+            <td>:</td>
+            <td>
+                <input type="number" name="jarijari" id="jarijari" min="1"> cm
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td>
+                <button class="hitung" onClick="hitung()">Hitung</button>
+            </td>
+        </tr>
+    </table>
+    <hr>
+    <h4>Keliling Lingkaran : <span id="keliling"></span> </h4>
+</body>
+<script>
+    function hitung() {
+        var jarijari = document.getElementById("jarijari").value;
+        if (jarijari == '' && jarijari == 0) {
+            document.getElementById("keliling").innerHTML = '';
+            alert("Jari Jari tidak boleh kosong atau pun 0");
+        }else{
+            var phi = 22/7;
+            var keliling= 2 * phi * jarijari;
+            document.getElementById("keliling").innerHTML = keliling + ' cm';
+        }
+    }
+</script>
+</html>

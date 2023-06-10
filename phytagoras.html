@@ -1,0 +1,73 @@
+<html>
+<head>
+    <title>Menghitung Sisi Segitiga</title>
+</head>
+<style>
+    #a, #b, #c{
+        width: 50%;
+    }
+</style>
+<body>
+    <h3>Program Phytagoras</h3>
+    <img src="segitiga.png" alt="Phytagoras" width="200px">
+        <table>
+            <tr>
+                <td>A</td>
+                <td>:</td>
+                <td>
+                    <input type="number" name="a" id="a" min="1" onInput="hitung()"> cm
+                </td>
+            </tr>
+            <tr>
+                <td>B</td>
+                <td>:</td>
+                <td>
+                    <input type="number" name="b" id="b" min="1" onInput="hitung()"> cm
+                </td>
+            </tr>
+            <tr>
+                <td>C</td>
+                <td>:</td>
+                <td>
+                    <input type="number" name="c" id="c" min="1" onInput="hitung()"> cm
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td>
+                    <button class="hitung" onClick="hitung()">Hitung</button>
+                </td>
+            </tr>
+        </table>
+</body>
+<script>
+    function hitung(){
+        var vals = {};
+        if( document.getElementById("a").value.length > 0 ){
+            vals.a = document.getElementById("a").value;
+        }
+        if( document.getElementById("b").value.length > 0 ){
+            vals.b = document.getElementById("b").value;
+        }
+        if( document.getElementById("c").value.length > 0 ){
+            vals.c = document.getElementById("c").value;
+        }
+
+        if( Object.keys(vals).length < 2 ){
+            alert('Masukan 2 Nilai!');
+            return;
+        }
+
+        if( typeof vals.a != 'undefined' && typeof vals.b != 'undefined' ){
+            document.getElementById("c").value = ( Math.sqrt( vals.a * vals.a + vals.b * vals.b ) );
+        }
+        else if( typeof vals.b != 'undefined' && typeof vals.c != 'undefined' ){
+            document.getElementById("a").value = ( Math.sqrt( vals.c * vals.c - vals.b * vals.b ) );
+        }
+        else if( typeof vals.a != 'undefined' && typeof vals.c != 'undefined' ){
+            document.getElementById("b").value = ( Math.sqrt( vals.c * vals.c - vals.a * vals.a ) );
+        }
+    }
+</script>
+</html>
